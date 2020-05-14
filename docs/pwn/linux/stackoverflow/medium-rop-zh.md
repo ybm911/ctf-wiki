@@ -422,7 +422,7 @@ pop rdx; ret
 
 但是，即使是这样，我们仍然难以识别出正在执行的gadget到底是在对哪个寄存器进行操作。
 
-但是，需要注意的是向BROP这样的一下子弹出6个寄存器的gadgets，程序中并不经常出现。所以，如果我们发现了这样的gadgets，那么，有很大的可能性，这个gadgets就是brop gadgets。此外，这个gadgets通过错位还可以生成pop rsp等这样的gadgets，可以使得程序崩溃也可以作为识别这个gadgets的标志。
+但是，需要注意的是像BROP这样的一下子弹出6个寄存器的gadgets，程序中并不经常出现。所以，如果我们发现了这样的gadgets，那么，有很大的可能性，这个gadgets就是brop gadgets。此外，这个gadgets通过错位还可以生成pop rsp等这样的gadgets，可以使得程序崩溃也可以作为识别这个gadgets的标志。
 
 此外，根据我们之前学的ret2libc_csu_init可以知道该地址减去0x1a就会得到其上一个gadgets。可以供我们调用其它函数。
 
